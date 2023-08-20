@@ -1,0 +1,32 @@
+{% load static %}
+{% load render_partial %}
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <title>3_oulless</title>
+  <meta content="" name="description">
+  <meta content="" name="keywords">
+
+  {% include 'shared/_HeaderReferences.html' %}
+  {% block style %}
+        
+  {% endblock %}
+</head>
+<body>
+
+    {% render_partial 'header' %}
+
+    <main id="main">
+       
+        {% block content %}
+        
+        {% endblock %}
+    </main>
+
+{% include 'shared/_FooterReferences.html' %}
+</body>
+</html>

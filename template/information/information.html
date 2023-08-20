@@ -1,0 +1,81 @@
+{% load static %}
+
+    <section id="about" class="about">
+        <div class="container">
+
+        
+            {% for i in information %}
+                <div class="section-title">
+                    <h2>About</h2>
+                    <p>
+                        {{ i.description }}
+                    </p>
+                </div>
+                <br>
+
+        
+            <div class="row">
+                <div class="col-lg-4" data-aos="fade-right">
+                    <img src="{{ i.img.url }}" class="img-fluid rounded-circle" alt="">
+                </div>
+                
+                <div class="col-lg-8 pt-4 pt-lg-0 content" data-aos="fade-left">
+                    <br>
+                    <br>
+                    <h3>{{ i.job }}</h3>
+                    <hr class="w-50">
+                    <br>
+                <div class="row">
+                    <div class="col-lg-6">
+                    <ul>
+                        <li><i class="bi bi-chevron-right"></i> <strong>Birthday:</strong> <span>{{ i.berth_day|date:"M d, Y"  }}</span></li>
+                        <li><i class="bi bi-chevron-right"></i> <strong>Website:</strong> <span><a href="{{ i.website }}">{{ i.website }}</a></span></li>
+                        <li><i class="bi bi-chevron-right"></i> <strong>Phone:</strong> <span>+98 <span>{{ i.phone }}</span> </span></li>
+                        <li><i class="bi bi-chevron-right"></i> <strong>City:</strong> <span>{{ i.city }}</span></li>
+                    </ul>
+                    </div>
+                    <div class="col-lg-6">
+                    <ul>
+                        <li><i class="bi bi-chevron-right"></i> <strong>Age:</strong> <span>{{ berth_day }}</span></li>
+                        <li><i class="bi bi-chevron-right"></i> <strong>Degree:</strong> <span>{{ i.degree }}</span></li>
+                        <li><i class="bi bi-chevron-right"></i> <strong>Email:</strong> <span>{{ i.email }}</span></li>
+                        {% if i.freelance == True %}
+                            <li><i class="bi bi-chevron-right"></i> <strong>Freelance:</strong> <span>Available</span></li>
+                        {% else %}
+                            <li><i class="bi bi-chevron-right"></i> <strong>Freelance:</strong> <span>Not Available</span></li>
+                        {% endif %}
+                    </ul>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+        {% endfor %}
+
+        </div>
+    </section>
+    <!-- End About Section -->
+
+    <section id="facts" class="facts">
+        <div class="container">
+  
+          <div class="section-title">
+            <h2>Social Media</h2>
+            <p>Magnam dolores commodi suscipit. Necessitatibus eius consequatur ex aliquid fuga eum quidem. Sit sint consectetur velit. Quisquam quos quisquam cupiditate. Et nemo qui impedit suscipit alias ea. Quia fugiat sit in iste officiis commodi quidem hic quas.</p>
+          </div>
+  
+          <div class="row no-gutters">
+
+            {% for i in social_media %}
+              <div class="col-lg-3 col-md-6 d-md-flex align-items-md-stretch" data-aos="fade-up">
+                <div class="count-box">
+                  <i class="bi bi-{{ i.social_media_name }}"></i>
+                  <span data-purecounter-start="0" data-purecounter-end="{{ i.Social_Media_follower_count }}" data-purecounter-duration="1" class="purecounter"></span>
+                </div>
+              </div>
+            {% endfor %}
+
+          </div>
+  
+        </div>
+      </section><!-- End Facts Section -->

@@ -1,0 +1,43 @@
+{% load static %}
+
+    <section id="yourـcomments" class="testimonials">
+        <div class="container">
+
+        <div class="section-title">
+            <h2>Your Comments</h2>
+            <p>Magnam dolores commodi suscipit. Necessitatibus eius consequatur ex aliquid fuga eum quidem. Sit sint consectetur velit. Quisquam quos quisquam cupiditate. Et nemo qui impedit suscipit alias ea. Quia fugiat sit in iste officiis commodi quidem hic quas.</p>
+        </div>
+
+        <div class="testimonials-slider swiper" data-aos="fade-up" data-aos-delay="100">
+            <br>
+                <br>
+            <div class="swiper-wrapper">
+            {% for i in comments %}
+                <div class="swiper-slide">
+                    <div class="testimonial-item" data-aos="fade-up">
+                    <p>
+                        <i class="bx bxs-quote-alt-left quote-icon-left"></i>
+                            {{i.comment}}
+                        <i class="bx bxs-quote-alt-right quote-icon-right"></i>
+                    </p>
+                    <img src="{% static 'img/testimonials/download.png' %}" class="testimonial-img" alt="">
+                    <h3>{{i.full_name}}</h3>
+                    <h4>{{i.subject}}</h4>
+                    <h4>{{i.email}}</h4>
+                    <h4>{{i.job}}</h4>
+                    </div>
+                </div>
+                <div>
+                    <p></p>
+                </div>
+            {% endfor %}
+            
+
+            </div>
+            <div class="swiper-pagination"></div>
+        </div>
+
+        </div>
+      
+
+    </section><!-- End Testimonials Section -->

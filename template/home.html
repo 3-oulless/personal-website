@@ -1,0 +1,45 @@
+{% extends 'shared/_MainLayout.html' %}
+{% load static %}
+
+{% block style %}
+  <style>
+    #hero{
+      width: 100% !important;
+      height: 100vh !important;
+      background: url('{% static "img/oskar-yildiz-cOkpTiJMGzA-unsplash.jpg" %}') top !important;
+      background-size: cover !important;
+    }
+  </style>
+{% endblock %}
+
+{% block content %}
+  <!-- ======= Hero Section ======= -->
+  <section id="hero" class="d-flex flex-column justify-content-center align-items-center">
+    <div class="hero-container" data-aos="fade-in">
+      {% for i in information %}
+        <h1>{{ i.full_name }}</h1>
+      {% endfor %}
+      <p>I'm <span class="typed" data-typed-items="Designer, Developer, Freelancer"></span></p>
+    </div>
+  </section>
+  <!-- End Hero -->
+
+
+  {% include 'information/information.html' %}
+
+
+
+  <div class="section-bg">
+    {% include 'skills/skill.html' %}
+  </div>
+  
+
+
+
+
+{% for i in information %}
+  <i class="bx bx-webcam" style="padding-left: 5px;">{{ i.visit_count }}</i>
+{% endfor %}
+
+  <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+{% endblock %}
